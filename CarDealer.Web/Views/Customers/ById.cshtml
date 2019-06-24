@@ -1,0 +1,25 @@
+﻿@model CustomerTotalSalesModel
+
+@{
+    ViewData["Title"] = "Customer Info";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Bought cars</th>
+            <th>Money spent</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>@Model.Name</th>
+            <th>@Model.BoughtCars.Count()</th>
+            <th>$@Model.TotalMoneySpent.ToString("F2")</th>
+        </tr>
+    </tbody>
+</table>
+

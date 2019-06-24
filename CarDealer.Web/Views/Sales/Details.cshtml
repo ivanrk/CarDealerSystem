@@ -1,0 +1,31 @@
+﻿@model SaleDetailsModel
+@{
+    ViewData["Title"] = $"Sale details";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Car details</th>
+            <th>Price</th>
+            <th>Discount</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <ul>
+                    <li>@Model.Car.Make</li>
+                    <li>@Model.Car.Model</li>
+                    <li>@(Model.Car.TravelledDistance / 1000) km</li>
+                </ul>
+            </td>
+            <td>
+                <del>$@Model.Price.ToString("F2")</del> <b><font color="red">$@Model.DiscountPrice.ToString("F2")</font></b>
+            </td>
+            <td>@((Model.Discount + (Model.IsYoungDriver ? 0.05 : 0)) * 100)%</td>
+        </tr>
+    </tbody>
+</table>
